@@ -12,7 +12,7 @@ export default class Nav {
         <div className="top-bar-left">
           <ul className="menu">
             <li>
-              React Weather App
+              <strong>React Weather App</strong>
             </li>
             <li>
               <IndexLink to="/" activeClassName="active">Get Weather</IndexLink>

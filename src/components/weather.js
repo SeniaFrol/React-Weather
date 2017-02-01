@@ -10,7 +10,7 @@ export default class Weather extends Component {
       isLoading: false
     };
   }
-  
+
   handleSearch = (location) => {
     this.setState({isLoading: true});
 
@@ -32,7 +32,7 @@ export default class Weather extends Component {
 
     function renderMessage(){
       if(isLoading) {
-        return <h3>Weather is loading...</h3>;
+        return <h3 className="text-center">Weather is loading...</h3>;
       } else if(temp && location && desc) {
           return <WeatherMessage temp={temp} location={location} desc={desc}/>;
       }
@@ -40,7 +40,7 @@ export default class Weather extends Component {
 
     return(
       <div>
-        <h3>Weather component</h3>
+        <h1 className="text-center title-top">Get Weather</h1>
         <WeatherForm onSearch={this.handleSearch}/>
         {renderMessage()}
       </div>

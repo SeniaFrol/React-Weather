@@ -25,7 +25,7 @@ export default class WeatherForm extends Component {
     return(
       <form onSubmit={this.onFormSubmit} className="navbar-form navbar-left">
         <input type="text" value={this.state.location} onChange={e => this.onInputChange(e.target.value)} />
-        <button className="btn btn-danger">Get Weather</button>
+        <button className="button expanded hollow">Get Weather</button>
       </form>
     );
   }

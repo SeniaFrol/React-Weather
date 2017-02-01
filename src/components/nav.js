@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Link, IndexLink} from 'react-router';
 
-export default class Nav {
-  onSearch (e) {
+export default class Nav extends Component {
+
+  onSearch(e) {
     e.preventDefault;
-    alert('Dont do it still')
+
+    var location = this.refs.search.value;
+    var encodedlocation = encodeURIComponent(location);
+
+    if(location.length > 0) {
+      this.refs.value = '';
+      window.location.hash = '#/?location=' + encodedlocation;
+    }
   }
+
   render(){
     return(
       <div className="top-bar">
@@ -26,10 +35,10 @@ export default class Nav {
           </ul>
         </div>
         <div className="top-bar-right">
-          <form onSubmit={this.onSearch}>
+          <form onSubmit={e =>this.onSearch(e)}>
             <ul className="menu">
               <li>
-                <input type="search" placeholder="Search weather" />
+                <input type="search" placeholder="Search weather" ref="search"/>
               </li>
               <li>
                 <input type="submit" className="button" value='Get Weather'/>

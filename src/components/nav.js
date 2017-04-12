@@ -4,7 +4,7 @@ import {Link, IndexLink} from 'react-router';
 export default class Nav extends Component {
 
   onSearch(e) {
-    e.preventDefault;
+    e.preventDefault();
 
     var location = this.refs.search.value;
     var encodedlocation = encodeURIComponent(location);
